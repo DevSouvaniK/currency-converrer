@@ -58,6 +58,7 @@ form input{
     align-items: center;
     width: 6rem;
     border-radius: 0.5rem;
+    margin: 0.5rem;
     border: 1px solid lightgrey;
 }
 

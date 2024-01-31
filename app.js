@@ -3,7 +3,7 @@ const BASE_URL = "https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/
 
 const dropdowns = document.querySelectorAll(".dropdowns select");
 const btn = document.querySelector("form button");
-const msg = document.querySelector(".msg");
+const msg = document.querySelector(".msg h3");
 const fromCurr = document.querySelector(".from select");
 const toCurr = document.querySelector(".to select");
 
@@ -27,8 +27,8 @@ for (let select of dropdowns) {
     })
 };
 
-// Accessing the selected values and changing images
 
+// Accessing the selected values and changing images
 const updateFlag = (element) => {
     let currCode = element.value;
     let countryCode = countryList[currCode];
@@ -49,10 +49,7 @@ const updateExchangeRate = async () => {
     let response = await fetch(URL);
     let data = await response.json();
     let rate = data[toCurr.value.toLowerCase()];
-    // console.log(fromCurr.value);
-    // console.log(amtval);
     let finalAmt = amtval * rate;
-    // console.log(finalAmt);
     msg.innerText = `${amtval} ${fromCurr.value} = ${finalAmt} ${toCurr.value}`;
 }
 
