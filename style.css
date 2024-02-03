@@ -27,6 +27,7 @@ form select,input, button{
     border: none;
     outline: none;
     border-radius: 1rem;
+
 }
 
 form input{
@@ -77,4 +78,5 @@ form button{
     background-color: #2abfd6 ;
     color: #fff;
     font-size: 1.1rem;
+    display: none;
 }

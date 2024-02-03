@@ -6,6 +6,8 @@ const btn = document.querySelector("form button");
 const msg = document.querySelector(".msg h3");
 const fromCurr = document.querySelector(".from select");
 const toCurr = document.querySelector(".to select");
+// const input = document.querySelector(".amount #getInput");
+const input = document.getElementById("getInput");
 
 
 // checking the country list
@@ -41,9 +43,11 @@ const updateFlag = (element) => {
 const updateExchangeRate = async () => {
     let amount = document.querySelector(".amount input");
     let amtval = amount.value;
-    if(amtval === "" || amtval < 1){
-        amtval = 1;
+
+    if(amtval === "" || amtval < 1 ){
+        amtval = 1;  
         amount.value = "1";
+        
     }
     const URL = `${BASE_URL}/${fromCurr.value.toLowerCase()}/${toCurr.value.toLowerCase()}.json`;
     let response = await fetch(URL);
@@ -64,6 +68,9 @@ window.addEventListener("load", () =>{
     updateExchangeRate();
 });
 
+// input.addEventListener("input", () => {
+//     updateExchangeRate();
+// });
 
 
 
